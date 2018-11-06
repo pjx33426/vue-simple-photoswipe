@@ -25,7 +25,7 @@ export default{
             ],
             options:{
                 index:0,
-                // shareEl: false,
+                shareEl: false
             }
         }
     },
