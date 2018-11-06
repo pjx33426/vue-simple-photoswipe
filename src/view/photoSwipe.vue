@@ -1,9 +1,7 @@
 <template>
-  <div class="photoSwipe">
-      <simple-photoswipe :slides="slides" :options="options" @close="close" @next="next" @prev="prev"
-      @goTo="goTo" @updateSize="updateSize"
-       ref="simplePhotoswipe"></simple-photoswipe>
-</div>
+    <div class="photoSwipe">
+      <simple-photoswipe :slides="slides" :options="options" @close="close" @afterChange="afterChange" @beforeChange="beforeChange" @destroy="destroy" ref="simplePhotoswipe"></simple-photoswipe>
+    </div>
 </template>
 <script>
 /* eslint-disable */
@@ -38,18 +36,19 @@ export default{
         close(){
             console.log('close')
         },
-        next(){
-            console.log('next')
+        afterChange(){
+            console.log('afterChange')
         },
-        prev(){
-            console.log('prev')
+        beforeChange(){
+            console.log('beforeChange')
         },
         goTo(index){
             console.log('goTo'+index)
         },
-        updateSize(force){
-            console.log('updateSize'+force)
+        destroy(){
+            console.log('destroy')
         }
+        
     }
 }
 </script>
