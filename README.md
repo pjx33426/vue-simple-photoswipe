@@ -6,6 +6,23 @@ A Vue Integrated PhotoSwipe Image Preview Plugin
 ```
 npm install simple-photoswipe --save 
 ```
+```js
+//main.js
+import simplePhotoswipe from 'simple-photoswipe'
+Vue.use(simplePhotoswipe)
+```
+
+But you can also import the standalone component to add locally or for more complex installations.
+
+```js
+// photoswipe.vue
+import { simplePhotoswipe } from 'simple-photoswipe'
+export default {
+  components: {
+    simplePhotoswipe
+  },
+}
+```
 ## Methods 
 ```html
 <simple-photoswipe :slides="slides" :options="options" @close="close" @afterChange="afterChange" @beforeChange="beforeChange" @destroy="destroy" ref="simplePhotoswipe"></simple-photoswipe>
