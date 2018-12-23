@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const photoSwipe = r => require.ensure([], () => r(require('@/view/photoSwipe.vue')), 'photoSwipe')
+const photoSwipe = r =>
+  require.ensure([], () => r(require('@/view/photoSwipe.vue')), 'photoSwipe')
 
 Vue.use(Router)
-const routes = [{
-  path: '*',
-  redirect: '/photoSwipe'
-},
-{
-  path: '/photoSwipe',
-  name: 'photoSwipe',
-  component: photoSwipe
-}
+const routes = [
+  {
+    path: '*',
+    redirect: '/photoSwipe'
+  },
+  {
+    path: '/photoSwipe',
+    name: 'photoSwipe',
+    component: photoSwipe
+  }
 ]
 
 const router = new Router({
@@ -28,8 +30,5 @@ const router = new Router({
       }
     }
   }
-})
-router.beforeEach((to, from, next) => {
-  next()
 })
 export default router
